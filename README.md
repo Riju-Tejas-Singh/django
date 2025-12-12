@@ -19,7 +19,7 @@ Alternate:
 python3 -m venv .venv
 source .venv/bin/activate
 pip install django (after activating venv to install within venv)
-python3 manage.py runserver
+python3 manage.py runserver (django-admin runserver --pythonpath=. --settings=chatbot.settings)
 deactivate (exit in above case to go back to global python env)
 
 Git commands:
@@ -33,6 +33,16 @@ git push -u origin main
 
 VsCode:
 Cmd+Shift+P -> Preferences -> Settings(JSON) -> {"git.path": "/usr/bin/git"}
+
+Working with Django:
+Create Django Model in models.py of your class
+python3 manage.py makemigrations ->prepares db changes in 0001_initial.py in /migrations
+python3 manage.py migrate -> does db changes in db.sqlite3
+
+admin.site.register(Product) in the admin.py to register model
+python3 manage.py createsuperuser
+http://127.0.0.1:8000/admin
+login with superuser creds
 
 
 
