@@ -1,0 +1,13 @@
+from rest_framework import serializers
+from .models import Product
+
+class ProductSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Product
+        fields = ['id', 'name', 'description', 'price']
+
+    def validate_price(self, value):
+        """Ensure price is not negative."""
+        if value < 0:
+            raise serializers.ValidationError("Price must be non-negative.")
+        return value
