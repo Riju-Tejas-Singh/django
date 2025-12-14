@@ -44,5 +44,7 @@ python3 manage.py createsuperuser
 http://127.0.0.1:8000/admin
 login with superuser creds
 
-
+serializer:
+pip install djangorestframework
+add to INSTALLED_APPS in settings.py -> 'rest_framework',
 
