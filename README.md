@@ -48,3 +48,7 @@ serializer:
 pip install djangorestframework
 add to INSTALLED_APPS in settings.py -> 'rest_framework',
 
+json from browser:
+urlpatterns = format_suffix_patterns(urlpatterns) and format=None) in views
+req-> http://127.0.0.1:8000/chatbot/products.json
+
