@@ -52,3 +52,6 @@ json from browser:
 urlpatterns = format_suffix_patterns(urlpatterns) and format=None) in views
 req-> http://127.0.0.1:8000/chatbot/products.json
 
+token based auth:
+add to INSTALLED_APPS -> 'rest_framework.authtoken'
+python3 manage.py migrate
