@@ -8,6 +8,7 @@ from . serializers import ProductSerializer, RegistrationSerializer
 from rest_framework.decorators import api_view
 
 from rest_framework import status
+from rest_framework.authtoken.models import Token
 
 
 def chatbot_start(request):
@@ -90,6 +91,9 @@ def register(request):
         if serializer.is_valid():
             user = serializer.save()
             data['response'] = 'Successfully registered a new user!'
+            ## This is by default in login api, we are returning it during registration as well
+            auth_token = Token.objects.get(user=user).key
+            data['token'] = auth_token
 
         else:
 
